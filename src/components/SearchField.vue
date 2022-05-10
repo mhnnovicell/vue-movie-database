@@ -5,9 +5,7 @@
         type="text"
         placeholder="Search for movie or series"
         class="input input-bordered w-full max-w-xs"
-        :value="searchText"
       />
-      {{ searchText }}
       <button
         class="btn btn-primary mb-4 mt-4 md:ml-4 md:mt-0"
         @click="getMovieFromApi()"
@@ -157,7 +155,7 @@ import { ref } from 'vue';
 import StarRating from 'vue-star-rating';
 import axios from 'axios';
 
-let searchText = ref('');
+// let searchText = ref('');
 let movieData = ref({});
 
 function getMovieFromApi() {
@@ -165,7 +163,7 @@ function getMovieFromApi() {
   var searchApiUrl = 'https://www.omdbapi.com/?apikey=89ea98eb&t=';
 
   console.log(this.searchText, 'searchText');
-  axios.get(searchApiUrl + this.searchText).then(
+  axios.get(searchApiUrl).then(
     function (response) {
       self.movieData = response.data;
     }.bind(this)
