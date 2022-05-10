@@ -9,7 +9,7 @@
       />
       <button
         class="btn btn-primary mb-4 mt-4 md:ml-4 md:mt-0"
-        @click="getMovieFromApi(searchText)"
+        @click="getMovieFromApi(this.searchText)"
         aria-label="Search"
       >
         Search
