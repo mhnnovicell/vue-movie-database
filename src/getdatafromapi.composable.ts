@@ -1,5 +1,5 @@
 // mouse.js
-import { ref, isRef, unref, watchEffect } from 'vue';
+import { ref } from 'vue';
 
 // by convention, composable function names start with "use"
 export function getMovieData() {
@@ -23,11 +23,6 @@ export function getMovieData() {
       });
   }
 
-  // a composable can also hook into its owner component's
-  // lifecycle to setup and teardown side effects.
-  //   onMounted(() => window.addEventListener('mousemove', update));
-  //   onUnmounted(() => window.removeEventListener('mousemove', update));
-
   // expose managed state as return value
-  return { searchApiUrl, getMovieFromApi, searchText, errorText, movieData };
+  return { searchApiUrl, getMovieFromApi, searchText, movieData };
 }

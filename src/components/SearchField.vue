@@ -155,11 +155,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import { getMovieData } from '../getdatafromapi.composable';
 import StarRating from 'vue-star-rating';
-const { searchApiUrl, getMovieFromApi, searchText, movieData } = getMovieData();
-
-function convertValueToNumber() {
-  parseFloat(movieData.imdbRating);
-}
+const { getMovieFromApi, searchText, movieData } = getMovieData();
 </script>
 
 <style lang="scss" scoped></style>
