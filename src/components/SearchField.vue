@@ -152,7 +152,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { getMovieData } from '../getdatafromapi.composable';
 import StarRating from 'vue-star-rating';
 const { getMovieFromApi, searchText, movieData } = getMovieData();
