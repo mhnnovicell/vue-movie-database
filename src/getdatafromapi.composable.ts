@@ -14,11 +14,7 @@ export function getMovieData() {
 
     fetch(searchApiUrl + this.searchText)
       .then((response) => response.json())
-      .then((data) => (this.movieData = data))
-      .catch((error) => {
-        console.log(error);
-        this.errorText = error;
-      });
+      .then((data) => (this.movieData = data));
 
     return searchApiUrl;
   }
