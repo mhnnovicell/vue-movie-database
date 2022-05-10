@@ -5,14 +5,14 @@ import { ref } from 'vue';
 export function getMovieData() {
   // state encapsulated and managed by the composable
 
-  const searchText = ref('');
+  let searchText = ref('');
   let movieData = ref(null);
 
   // a composable can update its managed state over time.
   function getMovieFromApi(event) {
     var searchApiUrl = 'https://www.omdbapi.com/?apikey=89ea98eb&t=';
 
-    fetch(searchApiUrl + this.searchText)
+    fetch(searchApiUrl + event)
       .then((response) => response.json())
       .then((data) => (this.movieData = data));
 
