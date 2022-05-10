@@ -9,7 +9,7 @@
       />
       <button
         class="btn btn-primary mb-4 mt-4 md:ml-4 md:mt-0"
-        @click="getMovieFromApi(this.searchText)"
+        @click="getMovieFromApi()"
         aria-label="Search"
       >
         Search
@@ -159,7 +159,7 @@ import axios from 'axios';
 let searchText = ref('');
 let movieData = ref({});
 
-function getMovieFromApi(test) {
+function getMovieFromApi() {
   let self = this;
   var searchApiUrl = 'https://www.omdbapi.com/?apikey=89ea98eb&t=';
 
