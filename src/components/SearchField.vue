@@ -152,7 +152,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
 import { getMovieData } from '../getdatafromapi.composable';
 import StarRating from 'vue-star-rating';
 const { getMovieFromApi, searchText, movieData } = getMovieData();
