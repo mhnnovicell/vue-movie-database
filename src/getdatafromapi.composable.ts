@@ -6,7 +6,7 @@ export function getMovieData() {
   // state encapsulated and managed by the composable
 
   const searchText = ref('');
-  const movieData = ref(null);
+  var movieData = ref(null);
 
   // a composable can update its managed state over time.
   function getMovieFromApi(event) {
@@ -14,7 +14,7 @@ export function getMovieData() {
 
     fetch(searchApiUrl + searchText)
       .then((response) => response.json())
-      .then((data) => (this.movieData = data));
+      .then((data) => (movieData = data));
 
     return searchApiUrl;
   }
