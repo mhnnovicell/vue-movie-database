@@ -10,13 +10,15 @@ export function getMovieData() {
   let searchText = ref('');
   let movieData = ref(null);
   // a composable can update its managed state over time.
-  function getMovieFromApi(searchText) {
+  function getMovieFromApi(test) {
     let self = this;
     var searchApiUrl = 'https://www.omdbapi.com/?apikey=89ea98eb&t=';
 
-    axios.get(searchApiUrl + self.searchText).then((response) => {
-      self.movieData = response.data;
-    });
+    axios.get(searchApiUrl + self.searchText).then(
+      function (response) {
+        self.movieData = response.data;
+      }.bind(this)
+    );
 
     return searchApiUrl;
   }
