@@ -152,9 +152,25 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
 import { getMovieData } from '../getdatafromapi.composable';
 import StarRating from 'vue-star-rating';
-const { getMovieFromApi, searchText, movieData } = getMovieData();
+import axios from 'axios';
+
+let searchText = ref('');
+let movieData = ref(null);
+
+function getMovieFromApi(searchText) {
+  let self = this;
+  var searchApiUrl = 'https://www.omdbapi.com/?apikey=89ea98eb&t=';
+
+  axios.get(searchApiUrl + self.searchText).then(
+    function (response) {
+      self.movieData = response.data;
+    }.bind(this)
+  );
+}
 </script>
 
 <style lang="scss" scoped></style>
