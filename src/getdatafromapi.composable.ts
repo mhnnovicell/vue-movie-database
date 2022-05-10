@@ -15,7 +15,7 @@ export function getMovieData() {
     let self = this;
     this.searchApiUrl = 'https://www.omdbapi.com/?apikey=89ea98eb&t=';
 
-    axios.get(this.searchApiUrl + this.searchText).then((response) => {
+    axios.get(this.searchApiUrl + self.searchText).then((response) => {
       self.movieData = response.data;
     });
   }
