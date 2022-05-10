@@ -20,6 +20,11 @@ export function getMovieData() {
         this.errorText = error;
       });
 
+    console.log(searchApiUrl, 'searchApiUrl');
+
+    console.log(this.searchText, 'this.searchText');
+    console.log(this.movieData, 'this.movieData');
+
     return searchApiUrl;
   }
 
