@@ -1,5 +1,7 @@
 // mouse.js
 import { ref } from 'vue';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 
 // by convention, composable function names start with "use"
 export function getMovieData() {
@@ -7,18 +9,17 @@ export function getMovieData() {
 
   let searchText = ref('');
   let movieData = ref(null);
-
+  let searchApiUrl = ref('');
   // a composable can update its managed state over time.
   function getMovieFromApi(event) {
-    var searchApiUrl = 'https://www.omdbapi.com/?apikey=89ea98eb&t=';
+    this.searchApiUrl = 'https://www.omdbapi.com/?apikey=89ea98eb&t=';
 
-    fetch(searchApiUrl + event)
-      .then((response) => response.json())
-      .then((data) => (this.movieData = data));
-
-    return searchApiUrl;
+    axios.get(this.searchApiUrl + this.searchText).then((response) => {
+      console.log(response.data);
+      this.movieData = response.data;
+    });
   }
 
   // expose managed state as return value
-  return { getMovieFromApi, searchText, movieData };
+  return { getMovieFromApi, searchText, movieData, searchApiUrl };
 }
