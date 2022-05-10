@@ -9,7 +9,7 @@ export function getMovieData() {
   const movieData = ref(null);
 
   // a composable can update its managed state over time.
-  function getMovieFromApi() {
+  function getMovieFromApi(searchText) {
     var searchApiUrl = 'https://www.omdbapi.com/?apikey=89ea98eb&t=';
 
     fetch(searchApiUrl + this.searchText)
