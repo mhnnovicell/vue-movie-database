@@ -12,7 +12,7 @@ export function getMovieData() {
   function getMovieFromApi(event) {
     var searchApiUrl = 'https://www.omdbapi.com/?apikey=89ea98eb&t=';
 
-    fetch(searchApiUrl + this.searchText)
+    fetch(searchApiUrl + searchText)
       .then((response) => response.json())
       .then((data) => (this.movieData = data));
 
