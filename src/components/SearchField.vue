@@ -163,6 +163,7 @@ function getMovieFromApi(test) {
   let self = this;
   var searchApiUrl = 'https://www.omdbapi.com/?apikey=89ea98eb&t=';
 
+  console.log(this.searchText, 'searchText');
   axios.get(searchApiUrl + this.searchText).then(
     function (response) {
       self.movieData = response.data;
