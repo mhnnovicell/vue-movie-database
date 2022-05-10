@@ -15,6 +15,7 @@
         Search
       </button>
     </div>
+    {{ searchText }}
 
     <div v-if="movieData" class="mt-4">
       <div
