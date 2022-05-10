@@ -9,11 +9,13 @@ module.exports = {
         sans: ['"Inter var"', ...defaultTheme.fontFamily.sans],
       },
     },
+    container: {
+      center: true,
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
-    require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/aspect-ratio'),
+    require("daisyui")
   ],
 }

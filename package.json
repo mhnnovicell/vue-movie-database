@@ -7,15 +7,14 @@
     "dev": "vite preview"
   },
   "dependencies": {
+    "daisyui": "^2.14.3",
     "vue": "^3.2.33",
-    "vue-router": "^4.0.15"
+    "vue-router": "^4.0.15",
+    "vue-star-rating": "^2.1.0"
   },
   "devDependencies": {
-    "@headlessui/vue": "^1.6.1",
     "@heroicons/vue": "^1.0.6",
-    "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.1",
-    "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
     "@types/tailwindcss": "^3.0.10",
     "@vitejs/plugin-vue": "^2.3.2",
