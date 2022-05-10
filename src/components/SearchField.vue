@@ -153,13 +153,11 @@
 
 <script setup>
 import { ref } from 'vue';
-
-import { getMovieData } from '../getdatafromapi.composable';
 import StarRating from 'vue-star-rating';
 import axios from 'axios';
 
 let searchText = ref('');
-let movieData = ref(null);
+let movieData = ref({});
 
 function getMovieFromApi(searchText) {
   let self = this;
