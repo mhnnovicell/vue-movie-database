@@ -5,8 +5,9 @@
         type="text"
         placeholder="Search for movie or series"
         class="input input-bordered w-full max-w-xs"
-        v-model="searchText"
+        :value="searchText"
       />
+      {{ searchText }}
       <button
         class="btn btn-primary mb-4 mt-4 md:ml-4 md:mt-0"
         @click="getMovieFromApi()"
