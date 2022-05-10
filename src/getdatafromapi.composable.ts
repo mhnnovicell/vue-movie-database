@@ -6,7 +6,6 @@ export function getMovieData() {
   // state encapsulated and managed by the composable
 
   const searchText = ref('');
-  const errorText = ref('');
   const movieData = ref(null);
 
   // a composable can update its managed state over time.
