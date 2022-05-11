@@ -166,7 +166,7 @@ function getMovieFromApi() {
 
   axios.get(searchApiUrl + searchText.value).then(
     function (response) {
-      self.movieData = response.data;
+      movieData.value = response.data;
     }.bind(this)
   );
 }
