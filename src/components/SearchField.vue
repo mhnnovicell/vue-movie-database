@@ -7,7 +7,6 @@
         class="input input-bordered w-full max-w-xs"
         v-model="searchText"
       />
-      {{ searchText }}
       <button
         class="btn btn-primary mb-4 mt-4 md:ml-4 md:mt-0"
         @click="getMovieFromApi()"
@@ -157,8 +156,8 @@ import { ref } from 'vue';
 import StarRating from 'vue-star-rating';
 import axios from 'axios';
 
-let searchText = ref('');
-let movieData = ref(null);
+const searchText = ref('');
+const movieData = ref(null);
 
 function getMovieFromApi() {
   let self = this;
@@ -170,41 +169,6 @@ function getMovieFromApi() {
     }.bind(this)
   );
 }
-
-function fortmatResponse(res) {
-  return JSON.stringify(res, null, 2);
-}
-
-const getDataByTitle = async () => {
-  if (searchText) {
-    let self = this;
-
-    try {
-      const res = await fetch(
-        `https://www.omdbapi.com/?apikey=89ea98eb&t=${searchText.value}`
-      );
-      console.log(res, 'res');
-      console.log(searchText, 'searchText');
-
-      const data = await res.json();
-      console.log(data, 'data');
-      const result = {
-        data: data,
-        status: res.status,
-        statusText: res.statusText,
-        headers: {
-          'Content-Type': res.headers.get('Content-Type'),
-          'Content-Length': res.headers.get('Content-Length'),
-        },
-      };
-      console.log(result, 'result');
-      movieData = data;
-      console.log(this.movieData, 'this.moviedata');
-    } catch (err) {
-      console.log(err.message, 'err.message');
-    }
-  }
-};
 </script>
 
 <style lang="scss" scoped></style>
